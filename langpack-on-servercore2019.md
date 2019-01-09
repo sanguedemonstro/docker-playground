@@ -76,8 +76,8 @@ WOW, some settings changed, another settings still same. The most important sett
 
 ## Others event logs to export
 ```
-wevtutil epl Microsoft-Windows-International-RegionalOptionsControlPanel/Operational C:\shared_at_container\international_01.evtx
-wevtutil epl Microsoft-Windows-International/Operational C:\shared_at_container\international_02.evtx
+wevtutil epl Microsoft-Windows-International-RegionalOptionsControlPanel/Operational C:\shared_at_container\international_01.evtx /ow
+wevtutil epl Microsoft-Windows-International/Operational C:\shared_at_container\international_02.evtx /ow
 ```
 
 ___
