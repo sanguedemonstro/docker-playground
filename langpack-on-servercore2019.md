@@ -106,3 +106,5 @@ Dockerfile is the same for both (2016 and 2019), except for base image:
 I came this far and all I have is a lot of questions:
 ## From where, how and when Server Core 2019 container reads that settings? And how it differs from 2016?
 ## What is the right way to [set international settings](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-international-settings-in-windows) on Server Core 2019 containers, ideally, without restart required?
+## Is it necessary to install language pack before change international settings?
+## Is it required to restart? Does it make sense, when we are talking about containers?
