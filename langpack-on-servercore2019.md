@@ -76,3 +76,26 @@ WOW, some settings changed, another settings still same. The most important sett
 ___
 # Why am I playing around this subject?
 Our IIS Application make a call to an legacy Win32 .exe process, that Win32 .exe deal with scripts, but scripts are being truncated on Server Core 2019, only when scripts have pt-BR chars like â, ã, é, ç,...
+- It's fails running on ServerCore2019
+- It's perfect fine when running on ServerCore2016, that's intriguing
+
+I'm running Docker Desktop Community on Windows 10 Desktop
+- Docker version: 18.09.0
+- Windows 10 host version: 10.0.17763.195 - It's a Desktop, not a Server - pt-BR version
+- Server Core 2016 version: 10.0.17134.469 - Running just fine
+- Server Core 2019 version: 10.0.17763.134 - With language issue
+
+Dockerfile is the same for both (2016 and 2019), except for base image:
+- Server Core 2016:	`FROM microsoft/aspnet:4.7.2-windowsservercore-1803`
+- Server Core 2019: `FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019`
+
+## Diagnostic
+**I'm not sure**, but "Language for non-Unicode programs" setting looks suspicious:
+- Running container Server Core 2016, _I think_ that it reads (the setting) from Windows host machine, which is pt-BR.
+- Running container Server Core 2019 (**probablly more isolated version**) it's not readding from Windows host machine.
+
+
+# Open questions
+I came this far and all I have is a lot of questions:
+## From where, how and when Server Core 2019 container reads that settings? And how it differs from 2016?
+## What is the right way to [set international settings](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-international-settings-in-windows) on Server Core 2019 containers, ideally, without restart required?
