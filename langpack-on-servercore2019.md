@@ -73,6 +73,13 @@ Get-Culture
 Get-WinHomeLocation
 ```
 WOW, some settings changed, another settings still same. The most important setting, in my case, is `WinSystemLocale`.
+
+## Others event logs to export
+```
+wevtutil epl Microsoft-Windows-International-RegionalOptionsControlPanel/Operational C:\shared_at_container\international_01.evtx
+wevtutil epl Microsoft-Windows-International/Operational C:\shared_at_container\international_02.evtx
+```
+
 ___
 # Why am I playing around this subject?
 Our IIS Application make a call to an legacy Win32 .exe process, that Win32 .exe deal with scripts, but scripts are being truncated on Server Core 2019, only when scripts have pt-BR chars like â, ã, é, ç,...
