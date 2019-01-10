@@ -48,7 +48,7 @@ Once I'm inside container, let's play and learn some tricks, take a look..
 2. Export evtx again and take a look, maybe something new appears
 
 ## How to list language pack
-`Get-WmiObject -Class Win32_OperatingSystem).MUILanguages`
+`(Get-WmiObject -Class Win32_OperatingSystem).MUILanguages`
 
 
 # Trying to set Internation Settings (and fail)
