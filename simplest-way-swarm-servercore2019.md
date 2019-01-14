@@ -13,3 +13,20 @@
 # Test load balance, you have go to outside of host machine
 `PS C:> powershell curl http://192.168.1.2:4000`
 `PS C:> powershell curl http://192.168.1.2:4000/raw.aspx`
+
+
+# Run Portainer:
+```
+netsh interface portproxy add v4tov4 listenaddress=10.0.75.1 listenport=2375 connectaddress=127.0.0.1 connectport=2375
+netsh advfirewall firewall add rule name="docker management" dir=in action=allow protocol=TCP localport=2375
+```
+```
+docker volume create portainer_data
+docker run -d -p 9000:9000 -v portainer_data:/data portainer/portainer -H tcp://10.0.75.1:2375
+```
+or
+```
+docker run -d -p 9000:9000 --name portainer --restart always -v \\.\pipe\docker_engine:\\.\pipe\docker_engine -v portainer_data:C:\data portainer/portainer
+```
+[details here](https://lemariva.com/blog/2018/05/tutorial-portainer-for-local-docker-environments-on-windows-10)
+and [here](https://www.portainer.io/installation/)
