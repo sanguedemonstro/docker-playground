@@ -12,7 +12,8 @@
 `docker service create --replicas 4 --name my-swarm-service --publish 4000:80 --network my-swarm-network webapp`
 # Test load balance, you have go to outside of host machine
 `PS C:> powershell curl http://192.168.1.2:4000`
-`PS C:> powershell curl http://192.168.1.2:4000/raw.aspx`
+or
+`PS C:> powershell "(iwr http://192.168.8.16:4000/raw.aspx).Content"`
 
 
 # Run Portainer:
