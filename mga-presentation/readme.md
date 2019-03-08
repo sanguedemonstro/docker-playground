@@ -32,7 +32,7 @@ docker run `
 ## explorig docker hub
 ```https://hub.docker.com```
 
-#demonstration 02
+# demonstration 02
 
-##download image
+## download image
 ```docker pull bennersistemas/wes:mga```
