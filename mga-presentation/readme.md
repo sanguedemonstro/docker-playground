@@ -34,5 +34,20 @@ docker run `
 
 # demonstration 02
 
-## download image
+## download image (at all hosts)
 ```docker pull bennersistemas/wes:mga```
+
+## create service
+```
+docker service create --replicas 4 `
+    --name wes-mga `
+    --publish 4000:80 `
+    -e superServerHost=DTC-BSCLOUD1 `
+    -e superServerSystemName=RESERVAS `
+    -e anonymousUserName=joao.melo `
+    -e anonymousPassword=benner `
+    -e systemInstanceName=RESERVAS `
+    -e loggingServerAddress=http://dtc-wesdocker.bennercloud.com.br:9200 `
+    -e sessionHost=dtc-wesdocker `
+    bennersistemas/wes:mga
+```
