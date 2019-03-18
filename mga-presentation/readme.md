@@ -29,7 +29,7 @@ docker run `
 ## publish
 ```docker push bennersistemas/wes:show```
 
-## explorig docker hub
+## exploring docker hub
 ```https://hub.docker.com```
 
 # demonstration 02
