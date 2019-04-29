@@ -12,10 +12,10 @@ docker run `
     -p 4000:80 `
     -e superserverhost=pegasus `
     -e superserversystemname=WES_DESENVOLVIMENTO `
-    -e anonymoususername=sysdba `
-    -e anonymouspassword=google `
+    -e anonymoususername=aaa `
+    -e anonymouspassword=bbb `
     -e systeminstancename=WES_DESENVOLVIMENTO `
-    -e loggingserveraddress=http://bnu-vtec012:9200 `
+    -e loggingserveraddress=http://bnu-aaabbb:9200 `
     -e sessionhost=bnu-vtec012 `
     bennersistemas/wes:show
 ```
@@ -42,12 +42,12 @@ docker run `
 docker service create --replicas 4 `
     --name wes-show `
     --publish 4000:80 `
-    -e superServerHost=DTC-BSCLOUD1 `
+    -e superServerHost=DTC-aaa `
     -e superServerSystemName=RESERVAS `
-    -e anonymousUserName=joao.melo `
-    -e anonymousPassword=benner `
+    -e anonymousUserName=aaa `
+    -e anonymousPassword=bbb `
     -e systemInstanceName=RESERVAS `
-    -e loggingServerAddress=http://dtc-wesdocker.bennercloud.com.br:9200 `
-    -e sessionHost=dtc-wesdocker `
+    -e loggingServerAddress=http://dtc-aaabbb.bennercloud.com.br:9200 `
+    -e sessionHost=dtc-aaabbb `
     bennersistemas/wes:show
 ```
