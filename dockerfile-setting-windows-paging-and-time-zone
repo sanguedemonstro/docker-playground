@@ -1,0 +1,4 @@
+FROM microsoft/dotnet-framework:4.7.2-runtime-windowsservercore-ltsc2019
+COPY scripts/* /scripts/
+RUN C:\scripts\Set-PageFileSize.ps1
+RUN reg import C:\scripts\BrazilTimeZone.reg
